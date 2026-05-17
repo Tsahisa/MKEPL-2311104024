@@ -15,7 +15,7 @@ public class CounterTest {
 
 		testCounter.reset();
 
-		assertEquals(0, testCounter.getCount());
+		assertEquals(0, testCounter.getCount(), 0);
 	}
 
 	@Test
@@ -24,7 +24,7 @@ public class CounterTest {
 
 		for (int i = 1; i < 10; i++) {
 			testCounter.increment();
-			assertEquals(i, testCounter.getCount());
+			assertEquals(i, testCounter.getCount(), i);
 		}
 	}
 
@@ -34,7 +34,7 @@ public class CounterTest {
 
 		for (int i = 1; i < 10; i++) {
 			testCounter.decrement();
-			assertEquals(i * -1, testCounter.getCount());
+			assertEquals(i * -1, testCounter.getCount(), i * -1);
 		}
 	}
 
