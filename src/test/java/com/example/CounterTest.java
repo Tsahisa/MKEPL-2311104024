@@ -1,6 +1,6 @@
 package com.example;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class CounterTest {
@@ -15,7 +15,7 @@ public class CounterTest {
 
 		testCounter.reset();
 
-		assertEquals(10, testCounter.getCount(), 0);
+		assertEquals(0, testCounter.getCount());
 	}
 
 	@Test
@@ -24,7 +24,7 @@ public class CounterTest {
 
 		for (int i = 1; i < 10; i++) {
 			testCounter.increment();
-			assertEquals(i, testCounter.getCount(), i);
+			assertEquals(i, testCounter.getCount());
 		}
 	}
 
@@ -34,7 +34,7 @@ public class CounterTest {
 
 		for (int i = 1; i < 10; i++) {
 			testCounter.decrement();
-			assertEquals(i * -1, testCounter.getCount(), i * -1);
+			assertEquals(i * -1, testCounter.getCount());
 		}
 	}
 
