@@ -12,12 +12,12 @@
 	</dependency>
 </dependencies>
 
-	<distributionManagement>
-	    <repository>
-	        <id>github</id>
-	        <name>GitHub Tsahisa Apache Maven Packages</name>
-	        <url>https://maven.pkg.github.com/Tsahisa/MKEPL-2311104024</url>
-	    </repository>
+<distributionManagement>
+	<repository>
+		<id>github</id>
+		<name>GitHub Tsahisa Apache Maven Packages</name>
+		<url>https://maven.pkg.github.com/Tsahisa/MKEPL-2311104024</url>
+	</repository>
 </distributionManagement>
   
   <properties>
