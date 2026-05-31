@@ -26,8 +26,16 @@ jobs:
           java-version: "17"
           distribution: "temurin"
           cache: maven
+          server-id: github
+          server-username: GITHUB_ACTOR
+          server-password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build with Maven
-        run: mvn -B -Dmaven.deploy.skip=true -Dsonar.skip=true package --file pom.xml
+        run: |
+          if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
+            mvn -B -Dsonar.skip=true package --file pom.xml
+          else
+            mvn -B -Dsonar.skip=true deploy --file pom.xml
+          fi
 
       # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
       - name: Update dependency graph
