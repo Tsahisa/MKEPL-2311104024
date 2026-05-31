@@ -1,11 +1,12 @@
-name: Maven Publish
+name: Maven Package
 
 on:
-  push:
-    branches: ["main"]
+  push: 
+    branches: [ "main" ]
 
 jobs:
-  publish:
+  build:
+  
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -19,8 +20,6 @@ jobs:
           java-version: "11"
           distribution: "temurin"
           server-id: github
-          server-username: ${{ github.actor }}
-          server-password: ${{ secrets.GITHUB_TOKEN }}
           settings-path: ${{ github.workspace }}
 
       - name: Build with Maven
@@ -29,4 +28,4 @@ jobs:
       - name: Publish to GitHub Packages Apache Maven
         run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
