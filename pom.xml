@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.Tsahisa</groupId>
   <artifactId>MKEPL-2311104024</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
 
 <dependencies>
   <dependency>
